@@ -72,5 +72,10 @@
     "typescript": "^5.4.5",
     "unified": "^11.0.4",
     "unist-util-visit": "^5.0.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "openai@4.47.3": "patches/openai@4.47.3.patch"
+    }
   }
 }
