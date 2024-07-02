@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  openai@4.47.3:
-    hash: b5xpdgrv4tr6wq2wx4rm5n6zl4
-    path: patches/openai@4.47.3.patch
-
 dependencies:
   '@discublog/api':
     specifier: latest
@@ -140,7 +135,7 @@ devDependencies:
     version: 13.1.0
   openai:
     specifier: 4.47.3
-    version: 4.47.3(patch_hash=b5xpdgrv4tr6wq2wx4rm5n6zl4)
+    version: 4.47.3
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -5326,7 +5321,7 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /openai@4.47.3(patch_hash=b5xpdgrv4tr6wq2wx4rm5n6zl4):
+  /openai@4.47.3:
     resolution: {integrity: sha512-470d4ibH5kizXflCzgur22GpM4nOjrg7WQ9jTOa3dNKEn248oBy4+pjOyfcFR4V4YUn/YlDNjp6h83PbviCCKQ==}
     hasBin: true
     dependencies:
@@ -5341,7 +5336,6 @@ packages:
     transitivePeerDependencies:
       - encoding
     dev: true
-    patched: true
 
   /opener@1.5.2:
     resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}

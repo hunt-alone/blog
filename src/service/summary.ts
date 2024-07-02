@@ -17,7 +17,7 @@ export async function createSummary(content: string) {
         {
           role: 'system',
           content:
-            "Please generate a very short summary (in English) of the user content, do not include the author's subjective opinions, and must be no longer than 20 words (this is important).",
+            "Please generate a very short summary (in chinese) of the user content, do not include the author's subjective opinions, and must be no longer than 20 words (this is important).",
         },
         { role: 'user', content },
       ],

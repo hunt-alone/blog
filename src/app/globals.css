@@ -17,7 +17,28 @@
   --border: 229 231 235;
 
   --font-remote: var(--font-remote-sans);
+
+  --back-color-1: hsl(0, 70%, 9.090909090909092%);
+  --back-color-2: hsl(0, 70%, 18.181818181818183%);
+  --back-color-3: hsl(0, 70%, 27.272727272727273%);
+  --back-color-4: hsl(0, 70%, 36.36363636363637%);
+  --back-color-5: hsl(0, 70%, 45.45454545454546%);
+  --back-color-6: hsl(0, 70%, 54.54545454545455%);
+  --back-color-7: hsl(0, 70%, 63.63636363636364%);
+  --back-color-8: hsl(0, 70%, 72.72727272727273%);
+  --back-color-9: hsl(0, 70%, 81.81818181818183%);
+  --back-color-10: hsl(0, 70%, 90.90909090909092%);
 }
+/*hsl(0, 70%, 9.090909090909092%)*/
+/*hsl(0, 70%, 18.181818181818183%)*/
+/*hsl(0, 70%, 27.272727272727273%)*/
+/*hsl(0, 70%, 36.36363636363637%)*/
+/*hsl(0, 70%, 45.45454545454546%)*/
+/*hsl(0, 70%, 54.54545454545455%)*/
+/*hsl(0, 70%, 63.63636363636364%)*/
+/*hsl(0, 70%, 72.72727272727273%)*/
+/*hsl(0, 70%, 81.81818181818183%)*/
+/*hsl(0, 70%, 90.90909090909092%)*/
 
 :root.dark {
   --brand: 226 232 240; /* theme('colors.slate.200') */
@@ -83,5 +104,46 @@
 
   .animation-breath {
     animation: breath ease 2s alternate infinite;
+  }
+}
+.navbar-wrapper {
+  z-index: 999;
+  background-image: radial-gradient(transparent 1px, rgb(var(--surface)) 1px);
+  background-size: 4px 4px;
+  backdrop-filter: saturate(50%) blur(4px);
+}
+
+.aaa {
+  h1 {
+    &:nth-child(1) {
+      background: var(--back-color-1);
+    }
+    &:nth-child(2) {
+      background: var(--back-color-2);
+    }
+    &:nth-child(3) {
+      background: var(--back-color-3);
+    }
+    &:nth-child(4) {
+      background: var(--back-color-4);
+    }
+    &:nth-child(5) {
+      background: var(--back-color-5);
+    }
+    &:nth-child(6) {
+      background: var(--back-color-6);
+    }
+    &:nth-child(7) {
+      background: var(--back-color-7);
+    }
+    &:nth-child(8) {
+      background: var(--back-color-8);
+    }
+    &:nth-child(9) {
+      background: var(--back-color-9);
+    }
+    &:nth-child(10) {
+      background: var(--back-color-10);
+    }
   }
 }

@@ -96,67 +96,67 @@ export default function Page() {
               </p>
             </TypedContent>
             <TypedText afterDelay={1000}>projects</TypedText>
-            <TypedContent>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/zhangyu1818/react-markdown-toc'>
-                      react-markdown-toc
-                    </a>
-                  </strong>
-                </li>
-                <li>Generating a Table of Contents (TOC) from Markdown.</li>
-              </ul>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/zhangyu1818/from-to'>
-                      from-to.js
-                    </a>
-                  </strong>
-                </li>
-                <li>Transitioning from one value to another.</li>
-              </ul>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/zhangyu1818/react-server-only-context'>
-                      react-server-only-context
-                    </a>
-                  </strong>
-                </li>
-                <li>
-                  A straightforward alternative for using context within React
-                  Server Components.
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/zhangyu1818/tw-styled'>
-                      tw-styled
-                    </a>
-                  </strong>
-                </li>
-                <li>
-                  Create Tailwind CSS-styled React components with ease using
-                  tw-styled.
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <strong>
-                    <a href='https://github.com/zhangyu1818/use-flip'>
-                      use-flip
-                    </a>
-                  </strong>
-                </li>
-                <li>
-                  Effortless FLIP animations with a React Hook for smoother
-                  transitions.
-                </li>
-              </ul>
-            </TypedContent>
+            {/*<TypedContent>*/}
+            {/*  <ul>*/}
+            {/*    <li>*/}
+            {/*      <strong>*/}
+            {/*        <a href='https://github.com/zhangyu1818/react-markdown-toc'>*/}
+            {/*          react-markdown-toc*/}
+            {/*        </a>*/}
+            {/*      </strong>*/}
+            {/*    </li>*/}
+            {/*    <li>Generating a Table of Contents (TOC) from Markdown.</li>*/}
+            {/*  </ul>*/}
+            {/*  <ul>*/}
+            {/*    <li>*/}
+            {/*      <strong>*/}
+            {/*        <a href='https://github.com/zhangyu1818/from-to'>*/}
+            {/*          from-to.js*/}
+            {/*        </a>*/}
+            {/*      </strong>*/}
+            {/*    </li>*/}
+            {/*    <li>Transitioning from one value to another.</li>*/}
+            {/*  </ul>*/}
+            {/*  <ul>*/}
+            {/*    <li>*/}
+            {/*      <strong>*/}
+            {/*        <a href='https://github.com/zhangyu1818/react-server-only-context'>*/}
+            {/*          react-server-only-context*/}
+            {/*        </a>*/}
+            {/*      </strong>*/}
+            {/*    </li>*/}
+            {/*    <li>*/}
+            {/*      A straightforward alternative for using context within React*/}
+            {/*      Server Components.*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*  <ul>*/}
+            {/*    <li>*/}
+            {/*      <strong>*/}
+            {/*        <a href='https://github.com/zhangyu1818/tw-styled'>*/}
+            {/*          tw-styled*/}
+            {/*        </a>*/}
+            {/*      </strong>*/}
+            {/*    </li>*/}
+            {/*    <li>*/}
+            {/*      Create Tailwind CSS-styled React components with ease using*/}
+            {/*      tw-styled.*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*  <ul>*/}
+            {/*    <li>*/}
+            {/*      <strong>*/}
+            {/*        <a href='https://github.com/zhangyu1818/use-flip'>*/}
+            {/*          use-flip*/}
+            {/*        </a>*/}
+            {/*      </strong>*/}
+            {/*    </li>*/}
+            {/*    <li>*/}
+            {/*      Effortless FLIP animations with a React Hook for smoother*/}
+            {/*      transitions.*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*</TypedContent>*/}
             <TypedText>blog-info</TypedText>
             <TypedContent>
               <p>
@@ -208,23 +208,23 @@ export default function Page() {
                 <code>React Native</code> and <code>SwiftUI</code>.
               </p>
             </TypedContent>
-            <TypedText>Contact</TypedText>
-            <TypedContent>
-              <div className='my-4 flex items-center'>
-                <p className='basis-1/4 text-center font-semibold'>Social</p>
-                <div className='grid flex-1 grid-cols-2 justify-items-start gap-2'>
-                  <a href='https://github.com/zhangyu1818'>Github</a>
-                  <a href='https://twitter.com/zhangyu1818'>Twitter</a>
-                  <a href='https://juejin.cn/user/4089838986339927'>掘金</a>
-                  <a href='https://dev.to/zhangyu1818'>Dev.to</a>
-                  <a href='https://medium.com/@zhangyu1818'>Medium</a>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <p className='basis-1/4 text-center font-semibold'>Email</p>
-                <a href='mailto:hey@mhunter.cn'>hey@mhunter.cn</a>
-              </div>
-            </TypedContent>
+            {/*<TypedText>Contact</TypedText>*/}
+            {/*<TypedContent>*/}
+            {/*  <div className='my-4 flex items-center'>*/}
+            {/*    <p className='basis-1/4 text-center font-semibold'>Social</p>*/}
+            {/*    <div className='grid flex-1 grid-cols-2 justify-items-start gap-2'>*/}
+            {/*      <a href='https://github.com/zhangyu1818'>Github</a>*/}
+            {/*      <a href='https://twitter.com/zhangyu1818'>Twitter</a>*/}
+            {/*      <a href='https://juejin.cn/user/4089838986339927'>掘金</a>*/}
+            {/*      <a href='https://dev.to/zhangyu1818'>Dev.to</a>*/}
+            {/*      <a href='https://medium.com/@zhangyu1818'>Medium</a>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*  <div className='flex items-center'>*/}
+            {/*    <p className='basis-1/4 text-center font-semibold'>Email</p>*/}
+            {/*    <a href='mailto:hey@mhunter.cn'>hey@mhunter.cn</a>*/}
+            {/*  </div>*/}
+            {/*</TypedContent>*/}
           </Typed>
         </div>
       </main>
