@@ -21,7 +21,7 @@ export const TypedContent = (props: TypedChildProps) => {
   return (
     <div
       ref={ref}
-      className='prose-sm p-4 text-inherit prose-a:text-sky-500 prose-a:underline prose-strong:text-white prose-code:mx-0.5 prose-code:rounded prose-code:bg-gray-700 prose-code:p-1 prose-code:text-white'
+      className='rose-a:text-sky-500·prose-a:underline·prose-strong:text-white·prose-code:mx-0.5·prose-code:rounded·prose-code:bg-gray-700·prose-code:p-1·prose-code:text-white·p-4·text-inherit'
     >
       {children}
     </div>

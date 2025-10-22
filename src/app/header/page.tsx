@@ -70,49 +70,16 @@ const Page = () => {
   return (
     <div className='relative h-dvh w-full bg-white'>
       <div className='navbar-wrapper fixed left-0 top-0 h-16 w-full border-b-2 border-cyan-400'></div>
-      <div className='aaa absolute left-0 top-0 h-dvh w-full overflow-scroll pt-16'>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsadasdasdasdasdadsad</h1>
+      <div className='absolute left-0 top-0 h-dvh w-full overflow-scroll pt-16'>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
-
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
-
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
@@ -133,11 +100,9 @@ const Page = () => {
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
-
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
-
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
@@ -156,63 +121,6 @@ const Page = () => {
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-        <h1>asdasdasdasdadsad</h1>
-
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>
         <h1>asdasdasdasdadsad</h1>

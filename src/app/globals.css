@@ -106,6 +106,29 @@
     animation: breath ease 2s alternate infinite;
   }
 }
+
+/* 主题切换动画增强 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 为用户偏好减少动画提供支持 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
 .navbar-wrapper {
   z-index: 999;
   background-image: radial-gradient(transparent 1px, rgb(var(--surface)) 1px);

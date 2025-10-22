@@ -5,7 +5,7 @@ import { Block } from '@/components/blocks/block'
 
 import { Toggle } from './toggle'
 
-const Cloud = tw.div`absolute h-1/5 w-1/5 rounded-full bg-gradient-to-b from-sky-100 to-white transition-all duration-1000 before:absolute before:-left-1/3 before:top-1/4 before:-z-10 before:h-2/3 before:w-2/3 before:rounded-full before:bg-gradient-to-b before:from-sky-100 before:to-white before:content-["_"] after:absolute after:-right-1/4 after:top-1/3 after:-z-10 after:h-1/2 after:w-1/2 after:rounded-full after:bg-gradient-to-b after:from-sky-100 after:to-white`
+const Cloud = tw.div`absolute h-1/5 w-1/5 rounded-full bg-gradient-to-b from-sky-100 to-white transition-all duration-1000 ease-in-out before:absolute before:-left-1/3 before:top-1/4 before:-z-10 before:h-2/3 before:w-2/3 before:rounded-full before:bg-gradient-to-b before:from-sky-100 before:to-white before:transition-all before:duration-1000 before:content-["_"] after:absolute after:-right-1/4 after:top-1/3 after:-z-10 after:h-1/2 after:w-1/2 after:rounded-full after:bg-gradient-to-b after:from-sky-100 after:to-white after:transition-all after:duration-1000`
 
 export function ThemeToggle() {
   return (

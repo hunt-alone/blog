@@ -29,16 +29,33 @@ export const ThemeToggle = () => {
     if (oldTheme === theme) {
       return
     }
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    const transiton: Tran = (document as Doc).startViewTransition(() => {
+
+    // 检查是否支持 View Transition API
+    const supportsViewTransition = 'startViewTransition' in document
+
+    // 检查用户是否偏好减少动画
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    // 更新主题的核心逻辑
+    const updateTheme = () => {
       setTheme(theme)
       if (theme === 'dark') {
         document.documentElement.classList.add('dark')
       } else {
         document.documentElement.classList.remove('dark')
       }
-    })
+    }
+
+    // 如果不支持 View Transition 或用户偏好减少动画，直接更新
+    if (!supportsViewTransition || prefersReducedMotion) {
+      updateTheme()
+      return
+    }
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    const transiton: Tran = (document as Doc).startViewTransition(updateTheme)
+
     transiton.ready.then(() => {
       const { clientX, clientY } = { clientX: innerWidth - 70, clientY: 80 }
       const radius = Math.hypot(
@@ -52,7 +69,8 @@ export const ThemeToggle = () => {
       document.documentElement.animate(
         { clipPath: isDark ? clipPath.reverse() : clipPath },
         {
-          duration: 300,
+          duration: 500,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
           pseudoElement: isDark
             ? '::view-transition-old(root)'
             : '::view-transition-new(root)',
@@ -70,7 +88,7 @@ export const ThemeToggle = () => {
         className='rounded p-1.5 outline-none transition-colors hover:bg-surface-1 pressed:bg-surface-1'
         aria-label='Menu'
       >
-        <Icon className='size-5' />
+        <Icon className='size-5 transition-transform duration-300 hover:rotate-12' />
       </Button>
       <Popover placement='bottom right'>
         <Menu
