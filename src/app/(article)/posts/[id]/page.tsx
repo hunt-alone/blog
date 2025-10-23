@@ -14,7 +14,7 @@ import { repoName, repoOwner } from '~/blog-config'
 
 import { GiscusScript } from '@/components/giscus'
 import { Markdown } from '@/markdown'
-import { Alert, CodeGroup, Details, Pre } from '@/markdown/components'
+import { Alert, CodeGroup, Details, List, Pre } from '@/markdown/components'
 import { TwoslashTooltip } from '@/markdown/twoslash/tooltip'
 import { TwoslashTrigger } from '@/markdown/twoslash/triger'
 import { queryAllPosts, queryByNumber } from '@/service'
@@ -110,6 +110,7 @@ export default async function Page({ params }: PageProps) {
             CodeGroup,
             Alert,
             Details,
+            List,
             pre: Pre,
             TwoslashTooltip,
             TwoslashTrigger,

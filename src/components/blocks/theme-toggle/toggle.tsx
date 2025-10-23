@@ -19,7 +19,9 @@ export const Toggle = (props: { children: React.ReactNode }) => {
     const supportsViewTransition = 'startViewTransition' in document
 
     // 检查用户是否偏好减少动画
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
 
     // 更新主题的核心逻辑
     const updateTheme = () => {
