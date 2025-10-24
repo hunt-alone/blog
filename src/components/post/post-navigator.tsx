@@ -42,7 +42,7 @@ export const PostNavigator = (props: PostNavigatorProps) => {
           <span className={titleStyles}>{previous.title}</span>
         </Link>
       ) : (
-        <div className='hidden sm:block flex-1' />
+        <div className='hidden flex-1 sm:block' />
       )}
       {next ? (
         <Link
@@ -53,10 +53,12 @@ export const PostNavigator = (props: PostNavigatorProps) => {
             下一篇
             <IconArrowRight className='size-3.5' />
           </span>
-          <span className={`${titleStyles} sm:line-clamp-2 sm:text-right`}>{next.title}</span>
+          <span className={`${titleStyles} sm:line-clamp-2 sm:text-right`}>
+            {next.title}
+          </span>
         </Link>
       ) : (
-        <div className='hidden sm:block flex-1' />
+        <div className='hidden flex-1 sm:block' />
       )}
     </nav>
   )

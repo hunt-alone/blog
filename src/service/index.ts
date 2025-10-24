@@ -98,7 +98,10 @@ export const queryPinnedItems = cache(
                   visibility
                   stargazerCount
                   forkCount
-                  languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+                  languages(
+                    first: 1
+                    orderBy: { field: SIZE, direction: DESC }
+                  ) {
                     nodes {
                       name
                       color

@@ -14,8 +14,6 @@ import { ThemeToggle } from '@/components/blocks/theme-toggle'
 import { Grid } from '@/components/grid'
 import { Header } from '@/components/header'
 
-import { ThemeSwitch } from '../../components/themeSwitch'
-
 export default function Layout() {
   return (
     <>
@@ -34,7 +32,6 @@ export default function Layout() {
         <Juejin />
         <Bilibili />
         <TransparentHeader />
-        <ThemeSwitch />
       </Grid>
     </>
   )

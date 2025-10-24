@@ -1,8 +1,5 @@
 'use client'
 
-import { IconCheck, IconCopy } from '@tabler/icons-react'
-import { cn } from '@/utils'
-
 import {
   isValidElement,
   useCallback,
@@ -14,7 +11,14 @@ import {
   type ReactNode,
 } from 'react'
 
-type PreProps = DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>
+import { IconCheck, IconCopy } from '@tabler/icons-react'
+
+import { cn } from '@/utils'
+
+type PreProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLPreElement>,
+  HTMLPreElement
+>
 
 const toPlainText = (node: ReactNode): string => {
   if (node === null || node === undefined) {
@@ -81,7 +85,10 @@ export const Pre = (props: PreProps) => {
     }
   }, [code])
 
-  const language = typeof rest['data-language'] === 'string' ? rest['data-language'] : undefined
+  const language =
+    typeof rest['data-language'] === 'string'
+      ? rest['data-language']
+      : undefined
   const hasLabel = Boolean(language)
 
   const feedback = copyError ? '复制失败' : copied ? '复制成功' : '复制代码'
@@ -96,7 +103,7 @@ export const Pre = (props: PreProps) => {
       ) : null}
       <button
         type='button'
-        className='absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/40 text-slate-800 opacity-100 shadow-sm backdrop-blur transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 md:opacity-0 md:group-hover:opacity-100 dark:border-white/10 dark:bg-white/10 dark:text-slate-100'
+        className='absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/40 text-slate-800 opacity-100 shadow-sm backdrop-blur transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 dark:border-white/10 dark:bg-white/10 dark:text-slate-100 md:opacity-0 md:group-hover:opacity-100'
         onClick={handleCopy}
         disabled={!code}
         aria-label={feedback}

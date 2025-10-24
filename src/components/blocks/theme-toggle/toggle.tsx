@@ -1,10 +1,11 @@
 'use client'
+
 import type { MouseEvent } from 'react'
 
 import { useDarkToggle } from 'dark-toggle/react'
 
 interface Doc extends Document {
-  startViewTransition: () => void
+  startViewTransition: (callback: () => void) => ViewTransition
 }
 
 type Tran = {
@@ -40,7 +41,6 @@ export const Toggle = (props: { children: React.ReactNode }) => {
     }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     const transiton: Tran = (document as Doc).startViewTransition(updateTheme)
 
     transiton.ready.then(() => {

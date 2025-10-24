@@ -20,10 +20,10 @@ import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import { MDX, type MDXProps } from 'rsc-mdx'
 
-import { rehypeGithubAlert } from './plugins'
 import { Blockquote } from './components/blockquote'
 import { Heading } from './components/heading'
 import { Paragraph } from './components/paragraph'
+import { rehypeGithubAlert } from './plugins'
 import { rendererMdx } from './twoslash/renderMdx'
 
 interface MarkdownProps {
@@ -32,10 +32,10 @@ interface MarkdownProps {
 }
 
 export async function Markdown(props: MarkdownProps) {
-  const { source, useMDXComponents } = props
+  const { source, useMDXComponents: resolveMDXComponents } = props
 
-  const components = () => {
-    const mdxComponents = useMDXComponents?.() ?? {}
+  const resolveComponents = () => {
+    const mdxComponents = resolveMDXComponents?.() ?? {}
     const baseComponents = {
       p: Paragraph,
       blockquote: Blockquote,
@@ -53,7 +53,7 @@ export async function Markdown(props: MarkdownProps) {
   return (
     <MDX
       source={source}
-      useMDXComponents={components}
+      useMDXComponents={resolveComponents}
       remarkPlugins={[remarkDirective, remarkGfm]}
       rehypePlugins={[
         rehypeGithubAlert,

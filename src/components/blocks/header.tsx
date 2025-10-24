@@ -1,6 +1,6 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 
-import { Block } from '@/components/blocks/block'
+// import { Block } from '@/components/blocks/block'
 
 export const TransparentHeader = () => (
   <></>

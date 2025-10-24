@@ -5,7 +5,7 @@ import { cn } from '@/utils'
 import { List } from './list'
 
 const paragraphBase =
-  'my-0 break-words text-[1.05rem] leading-[1.7] text-slate-700 first:mt-0 last:mb-0 dark:text-slate-200 lg:leading-[2]'
+  'my-0 break-words text-[1.05rem] leading-[1.7] text-slate-700 first:mt-0 last:mb-0 dark:text-slate-200 lg:leading-[1.8]'
 
 export const Paragraph = ({
   children,
@@ -25,7 +25,12 @@ export const Paragraph = ({
 
   if (containsList) {
     return (
-      <div className={cn(className, paragraphBase, 'space-y-4')} style={style} id={id} {...rest}>
+      <div
+        className={cn(className, paragraphBase, 'space-y-4')}
+        style={style}
+        id={id}
+        {...rest}
+      >
         {childArray}
       </div>
     )

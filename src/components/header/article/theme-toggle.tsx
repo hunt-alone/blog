@@ -9,7 +9,7 @@ import { Menu, MenuItem, Button, Popover } from '@/components/ui'
 import { useIsServer } from '@/hooks/useIsServer'
 
 interface Doc extends Document {
-  startViewTransition: () => void
+  startViewTransition: (callback: () => void) => ViewTransition
 }
 
 type Tran = {
@@ -55,7 +55,6 @@ export const ThemeToggle = () => {
     }
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     const transiton: Tran = (document as Doc).startViewTransition(updateTheme)
 
     transiton.ready.then(() => {
