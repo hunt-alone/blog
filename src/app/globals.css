@@ -64,6 +64,71 @@
   }
 }
 
+.prose :where(p):not(:where([class~="not-prose"] *)) {
+  @apply my-6 text-[1.05rem] leading-8 text-slate-700 first:mt-0 last:mb-0 dark:text-slate-200;
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+  @apply leading-7 text-slate-700 dark:text-slate-200;
+}
+
+.prose :where(ul, ol):not(:where([class~="not-prose"] *)) {
+  @apply my-5 pl-6;
+}
+
+
+.prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"] *)) {
+  @apply font-semibold tracking-tight text-slate-900 dark:text-white;
+}
+
+.prose :where(h1):not(:where([class~="not-prose"] *)) {
+  @apply text-4xl sm:text-5xl leading-tight mb-8;
+}
+
+.prose :where(h2):not(:where([class~="not-prose"] *)) {
+  @apply relative mt-14 mb-6 text-3xl leading-snug pl-5;
+}
+
+.prose :where(h2):not(:where([class~="not-prose"] *))::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(249,115,22,0.8), rgba(249,115,22,0.3));
+}
+
+.prose :where(h3):not(:where([class~="not-prose"] *)) {
+  @apply mt-12 mb-4 text-2xl text-slate-800 dark:text-slate-100;
+}
+
+.prose :where(h4):not(:where([class~="not-prose"] *)) {
+  @apply mt-10 mb-3 text-xl text-slate-700 dark:text-slate-200;
+}
+
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+  @apply relative my-10 overflow-hidden rounded-2xl border border-orange-200/70 bg-orange-50/80 px-8 py-6 text-[1.05rem] leading-8 text-slate-700 shadow-sm dark:border-orange-400/20 dark:bg-orange-500/10 dark:text-slate-100;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *))::before {
+  content: '""';
+  position: absolute;
+  top: -18px;
+  left: 24px;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(249, 115, 22, 0.15);
+  pointer-events: none;
+}
+
+.prose :where(blockquote p):not(:where([class~="not-prose"] *)) {
+  @apply m-0 text-inherit;
+}
 /* Tailwind utilities */
 @layer utilities {
   @keyframes hello {
@@ -135,38 +200,7 @@
   background-size: 4px 4px;
   backdrop-filter: saturate(50%) blur(4px);
 }
-
-.aaa {
-  h1 {
-    &:nth-child(1) {
-      background: var(--back-color-1);
-    }
-    &:nth-child(2) {
-      background: var(--back-color-2);
-    }
-    &:nth-child(3) {
-      background: var(--back-color-3);
-    }
-    &:nth-child(4) {
-      background: var(--back-color-4);
-    }
-    &:nth-child(5) {
-      background: var(--back-color-5);
-    }
-    &:nth-child(6) {
-      background: var(--back-color-6);
-    }
-    &:nth-child(7) {
-      background: var(--back-color-7);
-    }
-    &:nth-child(8) {
-      background: var(--back-color-8);
-    }
-    &:nth-child(9) {
-      background: var(--back-color-9);
-    }
-    &:nth-child(10) {
-      background: var(--back-color-10);
-    }
-  }
+.bio p {
+  margin: 0;
+  line-height: 1.5;
 }

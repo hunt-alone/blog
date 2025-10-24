@@ -40,9 +40,10 @@ export const useThemeToggle = () => {
   /**
    * 设置特定的主题
    * @param targetTheme - 目标主题 ('light' | 'dark' | 'system')
+   * @param position - 动画起点位置（可选）
    */
   const handleThemeChange = useCallback(
-    (targetTheme: Theme) => {
+    (targetTheme: Theme, position?: { x: number; y: number }) => {
       if (theme === targetTheme) {
         return
       }
@@ -58,7 +59,7 @@ export const useThemeToggle = () => {
         document.documentElement.classList.toggle('dark', shouldBeDark)
       }
 
-      performTransition(updateTheme, { isDark }, undefined)
+      performTransition(updateTheme, { isDark, position }, undefined)
     },
     [theme, setTheme, isDark, performTransition],
   )
