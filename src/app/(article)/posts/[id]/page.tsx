@@ -13,6 +13,7 @@ import { TOC } from 'react-markdown-toc/server'
 import { repoName, repoOwner } from '~/blog-config'
 
 import { GiscusScript } from '@/components/giscus'
+import { PostNavigator } from '@/components/post/post-navigator'
 import { Markdown } from '@/markdown'
 import { Alert, CodeGroup, Details, List, Pre } from '@/markdown/components'
 import { TwoslashTooltip } from '@/markdown/twoslash/tooltip'
@@ -62,6 +63,14 @@ export default async function Page({ params }: PageProps) {
   const { title, body, bodyText, labels, createdAt, updatedAt, number } =
     discussion!
 
+  const {
+    search: { nodes },
+  } = await queryAllPosts()
+
+  const currentIndex = nodes.findIndex(node => node.number === number)
+  const previousPost = currentIndex !== -1 ? nodes[currentIndex + 1] ?? null : null
+  const nextPost = currentIndex > 0 ? nodes[currentIndex - 1] ?? null : null
+
   const formatOptions = {
     year: 'numeric',
     month: 'long',
@@ -83,7 +92,7 @@ export default async function Page({ params }: PageProps) {
             </small>
           )}
         </span>
-        <h1 className='text-5xl'>{title}</h1>
+        <h1 className='text-4xl'>{title}</h1>
         <div className='flex items-center justify-between text-sm text-color-3'>
           <span className='flex gap-2'>
             {labels.nodes.map(node => (
@@ -103,7 +112,7 @@ export default async function Page({ params }: PageProps) {
           </span>
         </div>
       </header>
-      <article className='dark:prose-invert·prose-code:break-words·prose-pre:px-5·dark:prose-img:brightness-75·max-sm:prose-pre:rounded-none·sm:prose-img:rounded·[&:not(.mdx-components)]:prose-pre:my-0·max-w-none·max-xl:col-start-2'>
+      <article className='aaa dark:prose-invert·prose-code:break-words·prose-pre:px-5·dark:prose-img:brightness-75·max-sm:prose-pre:rounded-none·sm:prose-img:rounded·[&:not(.mdx-components)]:prose-pre:my-0·max-w-none·max-xl:col-start-2'>
         <Markdown
           source={body!}
           useMDXComponents={() => ({
@@ -120,6 +129,7 @@ export default async function Page({ params }: PageProps) {
             IconBulb,
           })}
         />
+        <PostNavigator previous={previousPost} next={nextPost} />
         <GiscusScript number={number} repo={`${repoOwner}/${repoName}`} />
       </article>
       <aside className='sticky top-32 ml-auto h-fit w-[22ch] max-xl:hidden'>

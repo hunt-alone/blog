@@ -17,106 +17,128 @@ const client = new Client({
   owner: repoOwner,
 })
 
-export const queryProfileREADME = cache(async () => {
-  const [masterResult, mainResult] = await Promise.allSettled([
-    graphql<RepositoryFile>(
-      `
-        query queryProfileREADME($owner: String!, $file: String!) {
-          repository(owner: $owner, name: $owner) {
-            object(expression: $file) {
-              ... on Blob {
-                text
+export const queryProfileREADME = cache(
+  async () => {
+    const [masterResult, mainResult] = await Promise.allSettled([
+      graphql<RepositoryFile>(
+        `
+          query queryProfileREADME($owner: String!, $file: String!) {
+            repository(owner: $owner, name: $owner) {
+              object(expression: $file) {
+                ... on Blob {
+                  text
+                }
               }
             }
           }
-        }
-      `,
-      {
-        owner: repoOwner,
-        file: 'master:README.md',
-      },
-    ),
-    graphql<RepositoryFile>(
-      `
-        query queryProfileREADME($owner: String!, $file: String!) {
-          repository(owner: $owner, name: $owner) {
-            object(expression: $file) {
-              ... on Blob {
-                text
+        `,
+        {
+          owner: repoOwner,
+          file: 'master:README.md',
+        },
+      ),
+      graphql<RepositoryFile>(
+        `
+          query queryProfileREADME($owner: String!, $file: String!) {
+            repository(owner: $owner, name: $owner) {
+              object(expression: $file) {
+                ... on Blob {
+                  text
+                }
               }
             }
           }
-        }
-      `,
-      {
-        owner: repoOwner,
-        file: 'main:README.md',
-      },
-    ),
-  ])
+        `,
+        {
+          owner: repoOwner,
+          file: 'main:README.md',
+        },
+      ),
+    ])
 
-  if (masterResult.status === 'fulfilled') {
-    const { repository } = masterResult.value
-    if (repository?.object?.text) {
-      return masterResult.value
+    if (masterResult.status === 'fulfilled') {
+      const { repository } = masterResult.value
+      if (repository?.object?.text) {
+        return masterResult.value
+      }
     }
-  }
 
-  if (mainResult.status === 'fulfilled') {
-    const { repository } = mainResult.value
-    if (repository?.object?.text) {
-      return mainResult.value
+    if (mainResult.status === 'fulfilled') {
+      const { repository } = mainResult.value
+      if (repository?.object?.text) {
+        return mainResult.value
+      }
     }
-  }
 
-  return {
-    repository: {
-      object: {
-        text: 'create [GitHub profile repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) to use Bio block.',
+    return {
+      repository: {
+        object: {
+          text: 'create [GitHub profile repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile) to use Bio block.',
+        },
       },
-    },
-  }
-})
+    }
+  },
+  ['queryProfileREADME'],
+  { revalidate: 60 },
+)
 
-export const queryPinnedItems = cache(() =>
-  graphql<PinnedItems>(
-    `
-      query queryPinnedItems($owner: String!) {
-        user(login: $owner) {
-          pinnedItems(first: 6, types: REPOSITORY) {
-            nodes {
-              ... on Repository {
-                name
-                url
-                description
-                homepageUrl
-                visibility
-                stargazerCount
-                forkCount
-                languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
-                  nodes {
-                    name
-                    color
+export const queryPinnedItems = cache(
+  () =>
+    graphql<PinnedItems>(
+      `
+        query queryPinnedItems($owner: String!) {
+          user(login: $owner) {
+            pinnedItems(first: 6, types: REPOSITORY) {
+              nodes {
+                ... on Repository {
+                  name
+                  url
+                  description
+                  homepageUrl
+                  visibility
+                  stargazerCount
+                  forkCount
+                  languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+                    nodes {
+                      name
+                      color
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    `,
-    {
-      owner: repoOwner,
-    },
-  ),
+      `,
+      {
+        owner: repoOwner,
+      },
+    ),
+  ['queryPinnedItems'],
+  { revalidate: 60 },
 )
 
-export const queryAllLabels = cache(() => client.queryLabels())
+export const queryAllLabels = cache(
+  () => client.queryLabels(),
+  ['queryAllLabels'],
+  { revalidate: 60 },
+)
 
-export const queryAllPosts = cache(() => client.search({ bodyText: true }))
+export const queryAllPosts = cache(
+  () => client.search({ bodyText: true }),
+  ['queryAllPosts'],
+  { revalidate: 60 },
+)
 
-export const queryByLabel = cache((label: string) => client.search({ label }))
+export const queryByLabel = cache(
+  (label: string) => client.search({ label }),
+  ['queryByLabel'],
+  { revalidate: 60 },
+)
 
-export const queryByNumber = cache((number: number) =>
-  client.queryByNumber({ number, body: true, bodyText: true }),
+export const queryByNumber = cache(
+  (number: number) =>
+    client.queryByNumber({ number, body: true, bodyText: true }),
+  ['queryByNumber'],
+  { revalidate: 60 },
 )

@@ -45,5 +45,5 @@ export const ThemeSwitch: FC = () => {
       )
     })
   }
-  return <button onClick={toggleTheme}>1234</button>
+  // return <button onClick={toggleTheme}>1234</button>
 }
