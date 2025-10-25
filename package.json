@@ -11,12 +11,9 @@
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css}": [
-      "prettier --write"
+    "*.{js,ts,vue,jsx,tsx}": [
+      "eslint --cache --fix",
+      "git add"
     ]
   },
   "dependencies": {

@@ -36,6 +36,7 @@ asdad
 asdada
 asdada
 const asdadas: boolean = 123123
+const asdada123s: boolean = 123123
 export const generateMetadata = async ({ params }: PageProps) => {
   const { id } = params
 
