@@ -37,6 +37,7 @@
     "use-flip": "^1.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@next/bundle-analyzer": "^14.2.3",
     "@octokit/core": "^6.1.2",
     "@react-aria/optimize-locales-plugin": "^1.1.1",
