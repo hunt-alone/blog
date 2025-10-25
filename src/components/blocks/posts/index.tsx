@@ -10,7 +10,7 @@ export const Posts = async () => {
     search: { nodes },
   } = discussions
 
-  const recentDiscussions = nodes.slice(0, 5)
+  const recentDiscussions = nodes.slice(0, 8)
   return (
     <>
       {recentDiscussions.map(node => (
