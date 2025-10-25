@@ -55,41 +55,97 @@
   --border: 51 65 85; /* theme('colors.slate.700') */
 }
 
+.prose {
+  max-width: unset;
+  color: rgb(var(--text-2));
+}
+
+.article-content {
+  position: relative;
+  padding: 3.5rem 3.25rem;
+  border-radius: 28px;
+  background: linear-gradient(
+    360deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  box-shadow: 0 24px 48px -24px rgba(15, 23, 42, 0.18);
+  /* border: 1px solid rgba(226, 232, 240, 0.7); */
+  backdrop-filter: blur(6px);
+}
+
+:root.dark .article-content {
+  background: linear-gradient(
+    360deg,
+    rgba(15, 23, 42, 0.9) 0%,
+    rgba(15, 23, 42, 0.75) 100%
+  );
+  border-color: rgba(148, 163, 184, 0.3);
+  box-shadow: 0 22px 48px -24px rgba(15, 23, 42, 0.6);
+}
+
+.article-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background-image: linear-gradient(
+      90deg,
+      rgba(249, 115, 22, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(0deg, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
+  background-size:
+    32px 32px,
+    32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 95%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.article-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.article-content .post-navigator {
+  margin-top: 3rem;
+}
+
 /* Markdown */
 
 .prose {
   > div > pre,
   > p:has(img) {
-    @apply -mx-4 md:-mx-8;
+    /* @apply -mx-4 md:-mx-8; */
   }
 }
 
-.prose :where(p):not(:where([class~="not-prose"] *)) {
+.prose :where(p):not(:where([class~='not-prose'] *)) {
   @apply my-6 text-[1.05rem] leading-8 text-slate-700 first:mt-0 last:mb-0 dark:text-slate-200;
 }
 
-.prose :where(li):not(:where([class~="not-prose"] *)) {
+.prose :where(li):not(:where([class~='not-prose'] *)) {
   @apply leading-7 text-slate-700 dark:text-slate-200;
 }
 
-.prose :where(ul, ol):not(:where([class~="not-prose"] *)) {
+.prose :where(ul, ol):not(:where([class~='not-prose'] *)) {
   @apply my-5 pl-6;
 }
 
-
-.prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"] *)) {
+.prose :where(h1, h2, h3, h4):not(:where([class~='not-prose'] *)) {
   @apply font-semibold tracking-tight text-slate-900 dark:text-white;
 }
 
-.prose :where(h1):not(:where([class~="not-prose"] *)) {
-  @apply text-4xl sm:text-5xl leading-tight mb-8;
+.prose :where(h1):not(:where([class~='not-prose'] *)) {
+  @apply mb-8 text-4xl leading-tight sm:text-5xl;
 }
 
-.prose :where(h2):not(:where([class~="not-prose"] *)) {
-  @apply relative mt-14 mb-6 text-3xl leading-snug pl-5;
+.prose :where(h2):not(:where([class~='not-prose'] *)) {
+  @apply relative mb-6 mt-14 pl-5 text-3xl leading-snug;
 }
 
-.prose :where(h2):not(:where([class~="not-prose"] *))::before {
+.prose :where(h2):not(:where([class~='not-prose'] *))::before {
   content: '';
   position: absolute;
   left: 0;
@@ -98,36 +154,109 @@
   height: 70%;
   width: 6px;
   border-radius: 9999px;
-  background: linear-gradient(180deg, rgba(249,115,22,0.8), rgba(249,115,22,0.3));
+  background: linear-gradient(
+    180deg,
+    rgba(249, 115, 22, 0.8),
+    rgba(249, 115, 22, 0.3)
+  );
 }
 
-.prose :where(h3):not(:where([class~="not-prose"] *)) {
-  @apply mt-12 mb-4 text-2xl text-slate-800 dark:text-slate-100;
+.prose :where(h3):not(:where([class~='not-prose'] *)) {
+  @apply mb-4 mt-12 text-2xl text-slate-800 dark:text-slate-100;
 }
 
-.prose :where(h4):not(:where([class~="not-prose"] *)) {
-  @apply mt-10 mb-3 text-xl text-slate-700 dark:text-slate-200;
+.prose :where(h4):not(:where([class~='not-prose'] *)) {
+  @apply mb-3 mt-10 text-xl text-slate-700 dark:text-slate-200;
 }
 
-
-.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
-  @apply relative my-10 overflow-hidden rounded-2xl border border-orange-200/70 bg-orange-50/80 px-8 py-6 text-[1.05rem] leading-8 text-slate-700 shadow-sm dark:border-orange-400/20 dark:bg-orange-500/10 dark:text-slate-100;
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  position: relative;
+  /* margin: 2rem 0; */
+  padding: 0.25rem 0 0.25rem 0.5rem;
+  border-left: 10px solid #7c4405;
+  background: transparent;
+  color: #4a3006;
+  font-weight: 600;
+  line-height: 1.7;
+  overflow: hidden;
 }
 
-.prose :where(blockquote):not(:where([class~="not-prose"] *))::before {
-  content: '""';
+:root.dark .prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  /* border-left-color: #fbbf24; */
+  color: #fef3c7;
+}
+
+.prose :where(blockquote):not(:where([class~='not-prose'] *))::before,
+.prose :where(blockquote):not(:where([class~='not-prose'] *))::after {
+  content: none;
+}
+
+.prose :where(blockquote p):not(:where([class~='not-prose'] *)) {
+  margin: 0;
+  color: inherit;
+  text-align: left;
+}
+
+.prose
+  :where(code):not(:where([class~='not-prose'] *)):not([class*='language-']) {
+  @apply mr-0.5  bg-orange-100/60 pr-1.5 py-0.5 font-medium text-orange-700 dark:bg-orange-500/20 dark:text-orange-200;
+}
+
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  @apply relative font-medium text-brand no-underline transition hover:text-orange-500;
+}
+
+.prose :where(a):not(:where([class~='not-prose'] *))::after {
+  content: '';
   position: absolute;
-  top: -18px;
-  left: 24px;
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 1;
-  color: rgba(249, 115, 22, 0.15);
-  pointer-events: none;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  /* background: linear-gradient(
+    90deg,
+    rgba(249, 115, 22, 0.6),
+    rgba(249, 115, 22, 0.2)
+  ); */
+  transform: scaleX(0.8);
+  opacity: 0.6;
 }
 
-.prose :where(blockquote p):not(:where([class~="not-prose"] *)) {
-  @apply m-0 text-inherit;
+.prose :where(hr):not(:where([class~='not-prose'] *)) {
+  @apply my-12 border-0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(249, 115, 22, 0.35),
+    transparent
+  );
+}
+
+.prose :where(table):not(:where([class~='not-prose'] *)) {
+  @apply my-8 w-full table-fixed overflow-hidden rounded-2xl border border-slate-200/70 text-sm shadow-sm dark:border-white/10;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+:root.dark .prose :where(table):not(:where([class~='not-prose'] *)) {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.prose :where(th, td):not(:where([class~='not-prose'] *)) {
+  @apply border-b border-slate-200/70 px-4 py-3 text-left align-top dark:border-white/10;
+}
+
+.prose :where(tr:last-child td):not(:where([class~='not-prose'] *)) {
+  @apply border-b-0;
+}
+
+.prose :where(strong):not(:where([class~='not-prose'] *)) {
+  @apply rounded-md bg-orange-100/80 px-1 py-0.5 font-semibold text-slate-900 dark:bg-orange-500/20 dark:text-white;
+}
+
+.prose :where(pre):not(:where([class~='not-prose'] *)) {
+  @apply text-[0.95rem] leading-7;
 }
 /* Tailwind utilities */
 @layer utilities {

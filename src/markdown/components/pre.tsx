@@ -89,39 +89,34 @@ export const Pre = (props: PreProps) => {
     typeof rest['data-language'] === 'string'
       ? rest['data-language']
       : undefined
-  const hasLabel = Boolean(language)
 
   const feedback = copyError ? '复制失败' : copied ? '复制成功' : '复制代码'
   const Icon = copied ? IconCheck : IconCopy
 
   return (
-    <div className='group relative my-6 first:mt-0 last:mb-0'>
-      {hasLabel ? (
-        <span className='pointer-events-none absolute left-4 top-4 z-10 select-none rounded-full border border-white/10 bg-white/20 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white backdrop-blur dark:border-white/5 dark:bg-white/10'>
-          {language!.toUpperCase()}
-        </span>
-      ) : null}
-      <button
-        type='button'
-        className='absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/40 text-slate-800 opacity-100 shadow-sm backdrop-blur transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 dark:border-white/10 dark:bg-white/10 dark:text-slate-100 md:opacity-0 md:group-hover:opacity-100'
-        onClick={handleCopy}
-        disabled={!code}
-        aria-label={feedback}
-        title={feedback}
-      >
-        <Icon
-          className={cn('size-4 transition-colors', {
-            'text-emerald-400': copied,
-            'text-red-400': copyError,
-          })}
-        />
-      </button>
+    <div className='group relative my-10 overflow-hidden rounded-3xl border border-slate-200/80 bg-white/70 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.4)] first:mt-0 last:mb-0 dark:border-white/10 dark:bg-white/[0.04]'>
+      <div className='flex items-center justify-between border-b border-slate-200/70 bg-gradient-to-b from-white to-white/70 px-6 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.55em] text-slate-500 dark:border-white/5 dark:from-white/10 dark:to-transparent dark:text-white/70'>
+        <span>{(language ?? 'code').toUpperCase()}</span>
+        <button
+          type='button'
+          className='inline-flex items-center gap-1 rounded-full border border-slate-300/70 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.25em] text-slate-500 transition hover:border-slate-400 hover:text-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 dark:border-white/20 dark:text-white/70 dark:hover:text-white'
+          onClick={handleCopy}
+          disabled={!code}
+        >
+          <Icon
+            className={cn('size-3.5 transition-colors', {
+              'text-emerald-400': copied,
+              'text-red-400': copyError,
+            })}
+          />
+          <span>{feedback}</span>
+        </button>
+      </div>
       <pre
         {...rest}
         className={cn(
           className,
-          hasLabel && 'pt-11',
-          'overflow-x-auto rounded-2xl border border-slate-200/80 bg-slate-950/90 p-5 text-[0.95rem] leading-7 text-slate-100 shadow-lg transition dark:border-slate-700/70 dark:bg-slate-900/90',
+          'overflow-x-auto bg-transparent px-6 py-5 font-mono text-[0.95rem] leading-[1.8] text-slate-900 dark:text-slate-100',
         )}
       >
         {children}

@@ -28,7 +28,7 @@ export const PostNavigator = (props: PostNavigatorProps) => {
   return (
     <nav
       aria-label='上一篇/下一篇'
-      className='mt-12 flex flex-col gap-4 rounded-3xl border border-transparent bg-surface/40 p-4 backdrop-blur sm:flex-row sm:items-stretch'
+      className='post-navigator mt-12 flex flex-col gap-4 rounded-3xl border border-transparent bg-surface/40 p-4 backdrop-blur sm:flex-row sm:items-stretch'
     >
       {previous ? (
         <Link
