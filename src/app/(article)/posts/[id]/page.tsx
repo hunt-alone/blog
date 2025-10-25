@@ -33,6 +33,9 @@ export const generateStaticParams = async () => {
 }
 const asdada: boolean = 123123
 asdad
+asdada
+asdada
+const asdadas: boolean = 123123
 export const generateMetadata = async ({ params }: PageProps) => {
   const { id } = params
 
