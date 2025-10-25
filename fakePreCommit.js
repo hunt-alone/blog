@@ -1,6 +1,6 @@
 // fakePreCommit.js
 const { execSync } = require('child_process')
-
+asdasdasdasd
 try {
   // 1. 获取暂存的文件
   const files = execSync('git diff --cached --name-only', {
@@ -15,7 +15,6 @@ try {
       console.log(`检查 ${file} ...`)
       // 假装发现问题
       if (file.includes('bad')) {
-        asdasdasdadassdasdasdasd
         throw new Error(`${file} 不合法！`)
       }
     }
