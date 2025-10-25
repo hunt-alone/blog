@@ -69,6 +69,8 @@ export default async function Page({ params }: PageProps) {
 
   const currentIndex = nodes.findIndex(node => node.number === number)
   const previousPost =
+
+  
     currentIndex !== -1 ? nodes[currentIndex + 1] ?? null : null
   const nextPost = currentIndex > 0 ? nodes[currentIndex - 1] ?? null : null
 
