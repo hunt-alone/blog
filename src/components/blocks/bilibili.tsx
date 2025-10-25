@@ -59,7 +59,7 @@ export const Bilibili = () => (
     <ExternalLink
       className='dark:bg-surface-3'
       title='哔哩哔哩'
-      href={`https://b23.tv/Sd2dS9J`}
+      href={`https://space.bilibili.com/386065990`}
     />
   </Block>
 )
