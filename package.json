@@ -11,8 +11,8 @@
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,cjs,ts,html,json,css,scss,vue}": ["pnpm prettier --write"],
-    "src/**/*.{js,cjs,ts,vue}": ["pnpm eslint --fix"]
+    "src/**/*.{js,jsx,cjs,ts,tsx,html,json,css,scss,vue}": ["pnpm prettier --write"],
+    "src/**/*.{js,jsx,cjs,ts,tsx,vue}": ["pnpm eslint --fix"]
   },
   "dependencies": {
     "@discublog/api": "latest",
