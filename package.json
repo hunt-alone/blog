@@ -10,9 +10,9 @@
     "prepare": "husky",
     "lint-staged": "lint-staged"
   },
-  "lint-staged": {  
-    "src/**/*.{js,cjs,ts,html,json,css,scss,vue}": ["npx prettier --write"],  
-    "src/**/*.{js,cjs,ts,vue}": ["npx eslint --fix"]  
+  "lint-staged": {
+    "src/**/*.{js,cjs,ts,html,json,css,scss,vue}": ["pnpm prettier --write"],
+    "src/**/*.{js,cjs,ts,vue}": ["pnpm eslint --fix"]
   },
   "dependencies": {
     "@discublog/api": "latest",
