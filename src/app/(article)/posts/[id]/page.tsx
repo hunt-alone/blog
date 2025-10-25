@@ -31,7 +31,7 @@ export const generateStaticParams = async () => {
   } = await queryAllPosts()
   return nodes.map(node => ({ id: `${node.number}` }))
 }
-
+const asdada: boolean = 123123
 export const generateMetadata = async ({ params }: PageProps) => {
   const { id } = params
 
