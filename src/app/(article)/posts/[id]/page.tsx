@@ -32,6 +32,7 @@ export const generateStaticParams = async () => {
   return nodes.map(node => ({ id: `${node.number}` }))
 }
 const asdada: boolean = 123123
+asdad
 export const generateMetadata = async ({ params }: PageProps) => {
   const { id } = params
 
