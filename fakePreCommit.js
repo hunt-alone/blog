@@ -15,7 +15,7 @@ try {
       console.log(`检查 ${file} ...`)
       // 假装发现问题
       if (file.includes('bad')) {
-        asdasdasdadassd
+        asdasdasdadassdasdasdasd
         throw new Error(`${file} 不合法！`)
       }
     }
