@@ -71,9 +71,9 @@ export default async function Page({ params }: PageProps) {
   /* eslint-disable prettier/prettier */
   const previousPost =
     currentIndex !== -1 ? (nodes[currentIndex + 1] ?? null) : null
+  // eslint-disable prettier/prettier
+  const nextPost = currentIndex > 0 ? (nodes[currentIndex - 1] ?? null) : null
   /* eslint-enable prettier/prettier */
-  const nextPost = currentIndex > 0 ? nodes[currentIndex - 1] ?? null : null
-
   const formatOptions = {
     year: 'numeric',
     month: 'long',
