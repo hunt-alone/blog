@@ -17,6 +17,9 @@ const client = new Client({
   owner: repoOwner,
 })
 
+// 查询时间
+const queryTime:number = 60 * 60 * 60 * 3 // 3 hours
+
 export const queryProfileREADME = cache(
   async () => {
     const [masterResult, mainResult] = await Promise.allSettled([
@@ -79,7 +82,7 @@ export const queryProfileREADME = cache(
     }
   },
   ['queryProfileREADME'],
-  { revalidate: 60 },
+  { revalidate: queryTime },
 )
 
 export const queryPinnedItems = cache(
@@ -118,30 +121,30 @@ export const queryPinnedItems = cache(
       },
     ),
   ['queryPinnedItems'],
-  { revalidate: 60 },
+  { revalidate: queryTime },
 )
 
 export const queryAllLabels = cache(
   () => client.queryLabels(),
   ['queryAllLabels'],
-  { revalidate: 60 },
+  { revalidate: queryTime },
 )
 
 export const queryAllPosts = cache(
   () => client.search({ bodyText: true }),
   ['queryAllPosts'],
-  { revalidate: 60 },
+  { revalidate: queryTime },
 )
 
 export const queryByLabel = cache(
   (label: string) => client.search({ label }),
   ['queryByLabel'],
-  { revalidate: 60 },
+  { revalidate: queryTime },
 )
 
 export const queryByNumber = cache(
   (number: number) =>
     client.queryByNumber({ number, body: true, bodyText: true }),
   ['queryByNumber'],
-  { revalidate: 60 },
+  { revalidate: queryTime },
 )

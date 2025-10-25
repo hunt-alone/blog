@@ -21,7 +21,7 @@ export async function createSummary(content: string) {
         },
         { role: 'user', content },
       ],
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-5-nano',
     })
 
     return completion.choices[0].message.content
