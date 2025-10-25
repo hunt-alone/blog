@@ -55,7 +55,7 @@
     "mdast-util-to-hast": "^13.1.0",
     "openai": "4.47.3",
     "postcss": "^8.4.38",
-    "prettier": "^3.2.5",
+    "prettier": "3.3.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-default-code-lang": "^1.0.0",
