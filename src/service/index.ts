@@ -18,7 +18,7 @@ const client = new Client({
 })
 
 // 查询时间
-const queryTime: number = 60 * 60 * 60 * 3 // 3 hours
+const queryTime: number = 60 // 3 hours
 
 export const queryProfileREADME = cache(
   async () => {
