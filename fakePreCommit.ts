@@ -1,6 +1,5 @@
 // fakePreCommit.js
 const { execSync } = require('child_process')
-asdasdasdasd
 try {
   // 1. 获取暂存的文件
   const files = execSync('git diff --cached --name-only', {
