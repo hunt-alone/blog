@@ -7,18 +7,20 @@ import { Octokit } from '@octokit/core'
 
 import { repoName, repoOwner } from '~/blog-config'
 
+import { env } from '@/env'
+
 import type { RepositoryFile, PinnedItems } from './interface'
 
-const { graphql } = new Octokit({ auth: process.env.GITHUB_TOKEN })
+const { graphql } = new Octokit({ auth: env.GITHUB_TOKEN })
 
 const client = new Client({
-  token: process.env.GITHUB_TOKEN!,
+  token: env.GITHUB_TOKEN,
   name: repoName,
   owner: repoOwner,
 })
 
-// 查询时间
-const queryTime: number = 60 // 3 hours
+// 查询缓存时间（秒）
+const queryTime: number = 60 * 60 * 3 // 3 hours (10800 seconds)
 
 export const queryProfileREADME = cache(
   async () => {

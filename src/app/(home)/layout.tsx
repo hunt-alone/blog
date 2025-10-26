@@ -13,10 +13,15 @@ import { Tags } from '@/components/blocks/tags'
 import { ThemeToggle } from '@/components/blocks/theme-toggle'
 import { Grid } from '@/components/grid'
 import { Header } from '@/components/header'
+import { WebsiteStructuredData } from '@/components/structured-data'
 
 export default function Layout() {
   return (
     <>
+      <WebsiteStructuredData
+        name='GUANNAN'
+        description='Dive into front-end development with a focus on React, cutting-edge frameworks, JavaScript, TypeScript, Swift, Animation and more'
+      />
       <Header />
       <Grid>
         <Bio />

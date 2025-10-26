@@ -2,7 +2,13 @@
 
 import { TooltipTrigger, Button } from 'react-aria-components'
 
-export const TwoslashTrigger = props => {
+interface TwoslashTriggerProps {
+  children: [React.ReactElement, React.ReactElement]
+  className?: string
+  open?: boolean
+}
+
+export const TwoslashTrigger = (props: TwoslashTriggerProps) => {
   const { children, className, open } = props
   const [span, tooltip] = children
   return (

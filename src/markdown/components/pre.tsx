@@ -15,10 +15,10 @@ import { IconCheck, IconCopy } from '@tabler/icons-react'
 
 import { cn } from '@/utils'
 
-type PreProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLPreElement>,
-  HTMLPreElement
->
+interface PreProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement> {
+  'data-language'?: string
+}
 
 const toPlainText = (node: ReactNode): string => {
   if (node === null || node === undefined) {

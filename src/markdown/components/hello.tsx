@@ -3,7 +3,7 @@ import { tw } from 'tw-styled'
 const Message = tw.span`absolute -top-5 inline-flex h-11 items-center whitespace-nowrap rounded-[1.33rem] bg-[#30db5b] text-xl before:absolute before:content-["_"] after:absolute after:content-["_"] max-sm:scale-90 sm:left-32 md:left-[60%] md:scale-110`
 
 const MessageLoadingDot = tw.i`h-3 w-3 animate-pulse rounded-full bg-gray-50`
-const Hello = ({ children }) => {
+const Hello = ({ children }: { children: string }) => {
   const regex =
     /([\u2700-\u27bf]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g
   const text = children.replace(regex, '')

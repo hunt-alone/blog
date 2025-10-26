@@ -2,6 +2,7 @@ import { clsx } from 'clsx'
 import { DarkToggleProvider, DarkToggleScript } from 'dark-toggle/react'
 import { Nunito, Handlee, Sorts_Mill_Goudy } from 'next/font/google'
 
+import { WebVitals } from '@/components/web-vitals'
 import { Provider } from '@/provider'
 
 import type { Metadata, Viewport } from 'next'
@@ -66,7 +67,11 @@ export const metadata: Metadata = {
   // },
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html
       suppressHydrationWarning
@@ -107,6 +112,7 @@ export default function RootLayout({ children }) {
         <DarkToggleScript />
       </head>
       <body className='bg-surface font-primary text-color-1'>
+        <WebVitals />
         <div className='fixed inset-0 bottom-1/4 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[length:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:hidden' />
         <Provider>
           <DarkToggleProvider>{children}</DarkToggleProvider>

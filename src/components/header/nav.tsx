@@ -32,7 +32,7 @@ export const Nav = () => {
           pre[name] = [cur.offsetLeft, cur.offsetWidth]
           return pre
         },
-        {} as typeof pos,
+        {} as Record<string, [number, number]>,
       )
       setPos(pos)
     }

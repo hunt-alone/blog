@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './markdown-styles.css';
+
 :root {
   --brand: 249 115 22; /* theme('colors.orange.600') */
   --text-1: 30 41 59; /* theme('colors.slate.800') */
@@ -199,7 +201,7 @@
 
 .prose
   :where(code):not(:where([class~='not-prose'] *)):not([class*='language-']) {
-  @apply mr-0.5  bg-orange-100/60 pr-1.5 py-0.5 font-medium text-orange-700 dark:bg-orange-500/20 dark:text-orange-200;
+  @apply mr-0.5  bg-orange-100/60 py-0.5 pr-1.5 font-medium text-orange-700 dark:bg-orange-500/20 dark:text-orange-200;
 }
 
 .prose :where(a):not(:where([class~='not-prose'] *)) {

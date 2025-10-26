@@ -35,8 +35,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# testing
+coverage
+.vitest
+
 .idea
 dist
 .env
 
 AGENTS.md
+
+/*.md

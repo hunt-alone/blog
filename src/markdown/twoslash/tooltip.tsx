@@ -6,7 +6,12 @@ import { OverlayArrow } from 'react-aria-components'
 import { Tooltip } from '@/components/ui'
 import { useIsServer } from '@/hooks/useIsServer'
 
-export const TwoslashTooltip = props => {
+interface TwoslashTooltipProps {
+  noArrow?: boolean
+  children: React.ReactNode
+}
+
+export const TwoslashTooltip = (props: TwoslashTooltipProps) => {
   const { noArrow, children } = props
   const id = useId()
   const isServer = useIsServer()

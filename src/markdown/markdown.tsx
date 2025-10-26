@@ -22,7 +22,10 @@ import { MDX, type MDXProps } from 'rsc-mdx'
 
 import { Blockquote } from './components/blockquote'
 import { Heading } from './components/heading'
+import { MDXImage } from './components/image'
+import { MDXLink } from './components/link'
 import { Paragraph } from './components/paragraph'
+import { Table, THead, TBody, TR, TH, TD } from './components/table'
 import { rehypeGithubAlert } from './plugins'
 import { rendererMdx } from './twoslash/renderMdx'
 
@@ -39,6 +42,14 @@ export async function Markdown(props: MarkdownProps) {
     const baseComponents = {
       p: Paragraph,
       blockquote: Blockquote,
+      a: MDXLink,
+      img: MDXImage,
+      table: Table,
+      thead: THead,
+      tbody: TBody,
+      tr: TR,
+      th: TH,
+      td: TD,
       h1: (props: ComponentProps<'h1'>) => <Heading as='h1' {...props} />,
       h2: (props: ComponentProps<'h2'>) => <Heading as='h2' {...props} />,
       h3: (props: ComponentProps<'h3'>) => <Heading as='h3' {...props} />,

@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { IconHash } from '@tabler/icons-react'
 
+import { env } from '@/env'
 import { createSummary, getSummary, writeSummery } from '@/service/summary'
 
 import { Block } from '../blocks/block'
@@ -25,7 +26,7 @@ export const Post = async (props: PostProps) => {
     !currentSummary &&
     bodyText &&
     process.env.NODE_ENV === 'development' &&
-    process.env.OPENAI_API_KEY
+    env.OPENAI_API_KEY
   ) {
     const result = await createSummary(bodyText)
     if (result) {

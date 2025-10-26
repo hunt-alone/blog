@@ -1,0 +1,101 @@
+/* Markdown 美化样式 */
+
+/* 链接样式 */
+.prose a {
+  @apply font-medium text-brand no-underline transition-all duration-200;
+}
+
+.prose a:hover {
+  @apply underline decoration-2 underline-offset-4;
+}
+
+/* 内联代码 - 只应用于非代码块中的 code */
+.prose :not(pre) > code {
+  @apply rounded bg-surface-2 px-2 py-0.5 text-sm font-medium text-color-1 before:content-[''] after:content-[''];
+}
+
+/* 代码块中的 code - 移除额外样式 */
+.prose pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+/* 标题 */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply scroll-mt-24 font-bold text-color-1;
+}
+
+.prose h1 {
+  @apply mb-6 mt-0 text-4xl;
+}
+
+.prose h2 {
+  @apply mb-4 mt-8 text-3xl;
+}
+
+.prose h3 {
+  @apply mb-3 mt-7 text-2xl;
+}
+
+/* 引用块 - 移除默认引号 */
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  @apply content-[''];
+}
+
+/* 表格样式 */
+.prose table {
+  @apply my-8 w-full border-separate border-spacing-0;
+}
+
+.prose thead {
+  @apply bg-surface-1;
+}
+
+.prose thead th {
+  @apply border-b-2 border-border p-3 text-left font-semibold;
+}
+
+.prose thead th:first-child {
+  @apply rounded-tl-lg;
+}
+
+.prose thead th:last-child {
+  @apply rounded-tr-lg;
+}
+
+.prose tbody tr {
+  @apply border-b border-border transition-colors;
+}
+
+.prose tbody tr:hover {
+  @apply bg-surface-1;
+}
+
+.prose tbody td {
+  @apply p-3;
+}
+
+/* 列表样式 */
+.prose ul,
+.prose ol {
+  @apply my-5;
+}
+
+.prose li {
+  @apply my-2;
+}
+
+/* 图片样式 */
+.prose img {
+  @apply my-8 rounded-xl shadow-lg;
+}
+
+/* 分隔线 */
+.prose hr {
+  @apply my-12 border-t-2 border-border;
+}

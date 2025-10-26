@@ -8,6 +8,36 @@ Using [Next.js](https://nextjs.org/) v14 App Router and React Server Components.
 
 Using [@discublog/api](https://github.com/discublog/api) to query GitHub repository discussions and rendering Markdown with [@mdx-js/mdx](https://github.com/mdx-js/mdx).
 
+## Development
+
+### Scripts
+
+```bash
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run tests
+pnpm test
+
+# Run tests with UI
+pnpm test:ui
+
+# Generate test coverage
+pnpm test:coverage
+
+# Lint code
+pnpm lint
+
+# Analyze bundle size
+pnpm analyze
+```
+
 ## Deploy
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhunt-alone%2Fblog&env=GITHUB_TOKEN,REPO_NAME,REPO_OWNER&envDescription=GitHub%20Token&envLink=https%3A%2F%2Fdocs.github.com%2Fen%2Fauthentication%2Fkeeping-your-account-and-data-secure%2Fmanaging-your-personal-access-tokens&project-name=blog&repository-name=blog&demo-title=hunt-alone's%20blog&demo-description=Personal%20blog&demo-url=https%3A%2F%2Fmhunter.cn)

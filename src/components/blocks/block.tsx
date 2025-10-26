@@ -7,7 +7,11 @@ import { useFlip } from 'use-flip'
 
 import { type StaticPageParams } from '@/app/static-page'
 
-export const Block = (props: React.HTMLAttributes<HTMLDivElement>) => {
+interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
+  'data-type'?: string
+}
+
+export const Block = (props: BlockProps) => {
   const { children, className, style, ...rest } = props
 
   const { tab: currentTab } = useParams<StaticPageParams>()

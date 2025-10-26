@@ -12,8 +12,12 @@ import { TOC } from 'react-markdown-toc/server'
 
 import { repoName, repoOwner } from '~/blog-config'
 
-import { GiscusScript } from '@/components/giscus'
+import { GiscusScript } from '@/components/giscus/dynamic'
 import { PostNavigator } from '@/components/post/post-navigator'
+import {
+  ArticleStructuredData,
+  BreadcrumbStructuredData,
+} from '@/components/structured-data'
 import { Markdown } from '@/markdown'
 import { Alert, CodeGroup, Details, List, Pre } from '@/markdown/components'
 import { TwoslashTooltip } from '@/markdown/twoslash/tooltip'
@@ -36,14 +40,31 @@ export const generateMetadata = async ({ params }: PageProps) => {
 
   const { repository } = await queryByNumber(+id)
   const { discussion } = repository!
-  const { title } = discussion!
+  const { title, createdAt, updatedAt, labels } = discussion!
 
-  // TODO og, twitter
   const summery = await getSummary()
   const description = summery[id]
+
   return {
     title,
     description,
+    keywords: labels.nodes.map(label => label.name),
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime: createdAt,
+      modifiedTime: updatedAt,
+      authors: [repoOwner],
+      tags: labels.nodes.map(label => label.name),
+      siteName: 'GUANNAN',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      creator: `@${repoOwner}`,
+    },
   }
 }
 
@@ -81,8 +102,26 @@ export default async function Page({ params }: PageProps) {
 
   const showLastUpdateTime = createDate !== updateDate
 
+  const summery = await getSummary()
+  const description = summery[id]
+
   return (
     <main className='m-auto grid grid-cols-[1fr_min(80ch,100%)_1fr] justify-center bg-[linear-gradient(to_bottom,transparent,rgb(var(--surface)/1)_150px,rgb(var(--surface)/1)_calc(100%_-_150px),transparent_100%)] px-4 py-28 md:px-8 xl:grid-cols-[80ch_30ch]'>
+      <ArticleStructuredData
+        title={title}
+        description={description}
+        publishedTime={createdAt}
+        modifiedTime={updatedAt}
+        tags={labels.nodes.map(label => label.name)}
+        articleNumber={number}
+      />
+      <BreadcrumbStructuredData
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Posts', url: '/posts' },
+          { name: title, url: `/posts/${number}` },
+        ]}
+      />
       <header className='mb-24 w-fit space-y-8 max-xl:col-start-2 xl:col-span-2'>
         <span className='text-color-2'>
           <small>{createDate}</small>
