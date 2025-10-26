@@ -208,7 +208,7 @@
   @apply relative font-medium text-brand no-underline transition hover:text-orange-500;
 }
 
-.prose :where(a):not(:where([class~='not-prose'] *))::after {
+/* .prose :where(a):not(:where([class~='not-prose'] *))::after {
   content: '';
   position: absolute;
   left: 0;
@@ -216,14 +216,9 @@
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  /* background: linear-gradient(
-    90deg,
-    rgba(249, 115, 22, 0.6),
-    rgba(249, 115, 22, 0.2)
-  ); */
   transform: scaleX(0.8);
   opacity: 0.6;
-}
+} */
 
 .prose :where(hr):not(:where([class~='not-prose'] *)) {
   @apply my-12 border-0;

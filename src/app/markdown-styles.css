@@ -5,7 +5,7 @@
   @apply font-medium text-brand no-underline transition-all duration-200;
 }
 
-.prose a:hover {
+.prose :not(nav) a:hover {
   @apply underline decoration-2 underline-offset-4;
 }
 
