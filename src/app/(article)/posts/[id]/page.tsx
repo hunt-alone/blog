@@ -112,7 +112,7 @@ export default async function Page({ params }: PageProps) {
           </span>
         </div>
       </header>
-      <article className='aaa dark:prose-invert·prose-code:break-words·prose-pre:px-5·dark:prose-img:brightness-75·max-sm:prose-pre:rounded-none·sm:prose-img:rounded·[&:not(.mdx-components)]:prose-pre:my-0·max-w-none·max-xl:col-start-2'>
+      <article className='prose prose-slate max-w-none dark:prose-invert prose-code:break-words prose-pre:px-5 dark:prose-img:brightness-75 max-xl:col-start-2 max-sm:prose-pre:rounded-none sm:prose-img:rounded [&:not(.mdx-components)]:prose-pre:my-0'>
         <Markdown
           source={body!}
           useMDXComponents={() => ({
