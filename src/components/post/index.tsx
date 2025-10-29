@@ -15,19 +15,33 @@ interface PostProps {
 
 export const Post = async (props: PostProps) => {
   const { node } = props
-  const { labels, number, bodyText } = node
+  const { labels, number, bodyText, updatedAt } = node
   const firstLabel = labels.nodes[0]
 
   const summaryJson = await getSummary()
 
-  const currentSummary = summaryJson[number]
+  // 获取当前 summary（兼容旧格式的字符串和新格式的对象）
+  const summaryData = summaryJson[number]
+  const currentSummary =
+    typeof summaryData === 'string' ? summaryData : summaryData?.text
 
-  // 在开发环境或构建时自动生成 summary
-  if (!currentSummary && bodyText && env.OPENAI_API_KEY) {
+  // 检查是否需要生成或更新 summary
+  // 条件：1) 没有 summary，或 2) 文章已更新且 summary 是旧版本
+  const needsUpdate =
+    !currentSummary ||
+    typeof summaryData === 'string' || // 旧格式需要迁移
+    !summaryData?.updatedAt ||
+    new Date(updatedAt) > new Date(summaryData.updatedAt)
+
+  if (needsUpdate && bodyText && env.OPENAI_API_KEY) {
     const result = await createSummary(bodyText)
     if (result) {
       const newSummaryJson = await getSummary()
-      newSummaryJson[number] = result
+      // 使用新格式存储：包含 text 和 updatedAt
+      newSummaryJson[number] = {
+        text: result,
+        updatedAt,
+      }
       await writeSummery(newSummaryJson)
     }
   }
