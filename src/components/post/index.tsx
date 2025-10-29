@@ -22,12 +22,8 @@ export const Post = async (props: PostProps) => {
 
   const currentSummary = summaryJson[number]
 
-  if (
-    !currentSummary &&
-    bodyText &&
-    process.env.NODE_ENV === 'development' &&
-    env.OPENAI_API_KEY
-  ) {
+  // 在开发环境或构建时自动生成 summary
+  if (!currentSummary && bodyText && env.OPENAI_API_KEY) {
     const result = await createSummary(bodyText)
     if (result) {
       const newSummaryJson = await getSummary()
